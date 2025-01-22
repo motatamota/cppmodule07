@@ -1,3 +1,5 @@
+#include "Array.h"
+
 template <typename T>
 Array<T>::Array() : arr_(0), size_(0)
 {
