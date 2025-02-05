@@ -2,6 +2,7 @@
 # define AR_H
 # include <ctime>
 # include <cstddef>
+# include <cstdlib>
 # include <exception>
 
 template<typename T>
@@ -19,6 +20,11 @@ public:
 	~Array();
 	unsigned int	size() const;
 	T	&operator[](unsigned int index);
+	const T	&operator[](unsigned int index) const;
+	class OutOfRangeException : public std::exception
+	{
+			const char *what() const throw();
+	};
 };
 
 # include "Array.tpp"
